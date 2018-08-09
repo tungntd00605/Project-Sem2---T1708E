@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $list_obj = User::all();
-        return $list_obj;
+        return view('admin.user')->with('list_obj', $list_obj);
     }
 
     /**
@@ -58,7 +58,7 @@ class UserController extends Controller
         if($obj == null){
             return view('404');
         }
-        return $obj;
+        return view('admin.user.show')->with('obj', $obj);
     }
 
     /**
