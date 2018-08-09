@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     public function tag(){
-        return $this->hasOne('App/Tag');
+        return $this->belongsTo('App/Tag');
     }
 
     public function user(){
-        return $this->hasOne('App/User');
+        return $this->belongsTo('App/User');
     }
 
     public function folder(){
