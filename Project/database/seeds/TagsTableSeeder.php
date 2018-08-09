@@ -15,7 +15,7 @@ class TagsTableSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('tags')->truncate();
         \Illuminate\Support\Facades\DB::table('tags')->insert([
             [
-                'id'=>0,
+                'id'=>1,
                 'name'=>'CNTT',
                 'description'=>'Infomation Technology',
                 'image'=>'https://tweakyourbiz.com/wp-content/uploads/2018/05/shutterstock_318368642.jpg'

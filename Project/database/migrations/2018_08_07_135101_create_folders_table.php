@@ -17,7 +17,7 @@ class CreateFoldersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('parentId');
-            $table->unsignedInteger('userId')->unique();
+            $table->unsignedInteger('userId');
             $table->timestamps();
             $table->integer('status')->default(1);
             $table->foreign('userId')->references('id')->on('users');

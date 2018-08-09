@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('users')->truncate();
         \Illuminate\Support\Facades\DB::table('users')->insert([
             [
-                'id'=>0,
+                'id'=>1,
                 'email'=>'root',
                 'password'=>\Illuminate\Support\Facades\Hash::make('root')
             ]

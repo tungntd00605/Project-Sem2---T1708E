@@ -15,10 +15,10 @@ class FoldersTableSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('folders')->truncate();
         \Illuminate\Support\Facades\DB::table('folders')->insert([
             [
-                'id'=>0,
+                'id'=>1,
                 'name'=>'root',
-                'parentId'=> 0,
-                'userId'=>0,
+                'parentId'=> 1,
+                'userId'=>1,
             ]
         ]);
     }
