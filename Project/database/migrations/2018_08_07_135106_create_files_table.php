@@ -22,6 +22,7 @@ class CreateFilesTable extends Migration
             $table->unsignedInteger('userId');
             $table->unsignedInteger('size');
             $table->string('link');
+            $table->string('path');
             $table->unsignedInteger('viewCount')->default(0);
             $table->unsignedInteger('downloadCount')->default(0);
             $table->timestamps();
