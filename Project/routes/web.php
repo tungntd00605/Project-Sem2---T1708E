@@ -12,7 +12,7 @@
 */
 
 Route::get('/admin', function () {
-    return view('layout.master');
+    return view('layout.admin-master-layout');
 });
 
 Route::resource('/user', 'UserController');
