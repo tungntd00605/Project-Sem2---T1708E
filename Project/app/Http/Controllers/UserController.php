@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $list_obj = User::all();
-        return view('admin.user')->with('list_obj', $list_obj);
+        return view('admin.user.list')->with('list_obj', $list_obj);
     }
 
     /**

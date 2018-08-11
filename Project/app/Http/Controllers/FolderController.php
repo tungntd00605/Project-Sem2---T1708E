@@ -19,7 +19,7 @@ class FolderController extends Controller
     public function index()
     {
         $list_obj = Folder::all();
-        return view('admin.folder')->with('list_obj', $list_obj);
+        return view('admin.folder.list')->with('list_obj', $list_obj);
     }
 
     /**

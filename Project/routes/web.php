@@ -16,3 +16,6 @@ Route::get('/admin', function () {
 });
 
 Route::resource('/user', 'UserController');
+Route::resource('/folder', 'FolderController');
+Route::resource('/file', 'FileController');
+Route::resource('/tag', 'TagController');
