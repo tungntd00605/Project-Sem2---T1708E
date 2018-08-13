@@ -15,7 +15,12 @@
 
     <!-- Your custom styles (optional) -->
     <style>
-
+        .table {
+            overflow-x: scroll;
+        }
+        th, td {
+            width: 200px;
+        }
     </style>
 </head>
 
@@ -28,15 +33,15 @@
     </div>
     <div class="card-body">
         <div id="table" class="table">
-            <table class="table table-bordered  table-striped text-center">
+            <table class="table table-bordered table-striped text-center table-fixed table-sm">
                 <tr>
-                    <th width="30"></th>
+                    <th></th>
                     <th class="text-center">Id</th>
-                    <th class="text-center" width="18%">Name</th>
-                    <th class="text-center" width="18%">Parent Id</th>
-                    <th class="text-center" width="18%">User Id</th>
-                    <th class="text-center" width="18%">Created at</th>
-                    <th class="text-center" width="100">Action</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Parent Id</th>
+                    <th class="text-center">User Id</th>
+                    <th class="text-center">Created at</th>
+                    <th class="text-center">Action</th>
                 </tr>
                 <tr>
                     <td scope="row">
@@ -46,7 +51,7 @@
                         </div>
                     </td>
                     <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Tung</td>
+                    <td class="pt-3-half">Folder1</td>
                     <td class="pt-3-half">1</td>
                     <td class="pt-3-half">2</td>
                     <td class="pt-3-half">11/8/2018</td>
@@ -62,7 +67,7 @@
                         </div>
                     </td>
                     <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Doan</td>
+                    <td class="pt-3-half">Folder2</td>
                     <td class="pt-3-half">1</td>
                     <td class="pt-3-half">2</td>
                     <td class="pt-3-half">11/8/2018</td>
@@ -78,7 +83,7 @@
                         </div>
                     </td>
                     <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Duc</td>
+                    <td class="pt-3-half">Folder3</td>
                     <td class="pt-3-half">1</td>
                     <td class="pt-3-half">2</td>
                     <td class="pt-3-half">11/8/2018</td>
@@ -94,7 +99,7 @@
                         </div>
                     </td>
                     <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Hieu</td>
+                    <td class="pt-3-half">Folder4</td>
                     <td class="pt-3-half">1</td>
                     <td class="pt-3-half">2</td>
                     <td class="pt-3-half">11/8/2018</td>
@@ -105,7 +110,7 @@
             </table>
         </div>
     </div>
-    <div class="card-footer white-ic align-middle fixed-bottom">
+    <div class="white-ic align-middle">
         <div class="form-check float-left">
             <input type="checkbox" class="form-check-input" id="materialUnchecked_">
             <label class="form-check-label" for="materialUnchecked_"></label>
