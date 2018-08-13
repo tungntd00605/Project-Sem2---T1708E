@@ -20,7 +20,7 @@ class TagController extends Controller
     public function index()
     {
         $list_obj = Tag::all();
-        return view('admin.folder')->with('list_obj', $list_obj);
+        return view('admin.tag.list')->with('list_obj', $list_obj);
     }
 
     /**
@@ -30,7 +30,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('admin.create-tag-form');
+        return view('admin.tag.create-tag-form');
     }
 
     /**
@@ -41,7 +41,7 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        $obj = new File();
+        $obj = new Tag();
         $obj->name = Input::get('name');
         $obj->description = Input::get('description');
         if (Input::hasFile('images')) {
@@ -49,8 +49,9 @@ class TagController extends Controller
             Cloudder::upload(Input::file('images')->getRealPath(), $image_id);
             $obj->image = Cloudder::secureShow($image_id);
         }
-        $obj->save();
-        return response()->json(['item' => $obj], 200, 'Success to create new tag.');
+        if($obj->save()){
+            return response()->json(['msg' => 'Success to create new tag'], 200);
+        }
     }
 
     /**
@@ -63,12 +64,9 @@ class TagController extends Controller
     {
         $obj = Tag::find($id);
         if ($obj == null) {
-            return response()->json(['msg' => 'Not found'], 404);
+            return view('404');
         }
-        $obj->name = Input::get('name');
-        $obj->description = Input::get('description');
-        $obj->save();
-        return response()->json(['item' => $obj]);
+        return view('admin.tag.show');
     }
 
     /**
@@ -80,6 +78,12 @@ class TagController extends Controller
     public function edit($id)
     {
         //
+        $obj = Tag::find($id);
+        if ($obj == null) {
+            return view('404');
+        }
+        return view('admin.file.edit-tag')
+            ->with('obj', $obj);
     }
 
     /**
@@ -103,7 +107,7 @@ class TagController extends Controller
             $obj->images = Cloudder::secureShow($image_id);
         }
         $obj->save();
-        return response()->json(['item' => $obj], 200, 'Success to update tag.');
+        return response()->json(['msg'=>'Success to update tag'], 200);
     }
 
     /**
@@ -118,8 +122,9 @@ class TagController extends Controller
         if ($obj == null) {
             return view('404');
         }
-        $obj->delete();
         $obj->status = 0;
-        return response()->json(['item' => $obj], 200, 'Success to delete tag.');
+        if($obj->save()){
+            return response()->json(['msg'=>'Success to delete tag'], 200);
+        }
     }
 }

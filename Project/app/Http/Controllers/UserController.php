@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $list_obj = User::all();
-        return view('admin.user')->with('list_obj', $list_obj);
+        return view('admin.user.list')->with('list_obj', $list_obj);
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.register-form');
+        return view('admin.user.register-form');
     }
 
     /**
@@ -70,6 +70,12 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $obj = Tag::find($id);
+        if ($obj == null) {
+            return view('404');
+        }
+        return view('admin.user.edit-user')
+            ->with('obj', $obj);
     }
 
     /**

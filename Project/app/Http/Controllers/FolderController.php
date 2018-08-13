@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Input;
-use JD\Cloudder\Facades\Cloudder;
 
 class FolderController extends Controller
 {
@@ -19,7 +18,7 @@ class FolderController extends Controller
     public function index()
     {
         $list_obj = Folder::all();
-        return view('admin.folder')->with('list_obj', $list_obj);
+        return view('admin.folder.list')->with('list_obj', $list_obj);
     }
 
     /**
@@ -29,7 +28,7 @@ class FolderController extends Controller
      */
     public function create()
     {
-        return view('admin.create-folder-form');
+        return view('admin.folder.create-folder-form');
     }
 
     /**
@@ -45,7 +44,9 @@ class FolderController extends Controller
         $obj->parentId = Input::get('parentId');
         $obj->userId = Input::get('userId');
         $obj->save();
-        return response()->json(['item' => $obj], 200);
+        if($obj->save()){
+            return response()->json(['msg' => 'Success to create new folder'], 200);
+        }
     }
 
     /**
@@ -58,16 +59,9 @@ class FolderController extends Controller
     {
         $obj = Folder::find($id);
         if ($obj == null) {
-            return response()->json(['msg' => 'Not found'], 404);
+            return view('404');
         }
-        $obj->name = Input::get('name');
-        $obj->parentId = Input::get('parentId');
-        $obj->userId = Input::get('userId');
-        $obj->createdAt = Input::get('createdAt');
-        $obj->updatedAt = Input::get('updateAt');
-        $obj->status = Input::get('status');
-        $obj->save();
-        return response()->json(['item' => $obj]);
+        return view('admin.folder.show');
     }
 
     /**
@@ -77,6 +71,18 @@ class FolderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function edit($id)
+    {
+        //
+        $obj = Tag::find($id);
+        if ($obj == null) {
+            return view('404');
+        }
+        return view('admin.folder.edit-folder')
+            ->with('obj', $obj);
+    }
+
     public function update(Request $request, $id)
     {
         $obj = Folder::find($id);
@@ -86,15 +92,8 @@ class FolderController extends Controller
         $obj->name = Input::get('name');
         $obj->parentId = Input::get('parentId');
         $obj->userId = Input::get('userId');
-        $obj->updatedAt = Input::get('updateAt');
-        $obj->status = Input::get('status');
-        if (Input::hasFile('images')) {
-            $image_id = time();
-            Cloudder::upload(Input::file('images')->getRealPath(), $image_id);
-            $obj->images = Cloudder::secureShow($image_id);
-        }
         $obj->save();
-        return response()->json(['item' => $obj], 200, 'Success to update folder.');
+        return response()->json(['msg'=>'Success to update password'], 200);
     }
 
     /**
@@ -109,8 +108,9 @@ class FolderController extends Controller
         if ($obj == null) {
             return view('404');
         }
-        $obj->delete();
         $obj->status = 0;
-        return response()->json(['item' => $obj], 200, 'Success to delete folder.');
+        if($obj->save()){
+            return response()->json(['msg'=>'Success to delete folder'], 200);
+        }
     }
 }
