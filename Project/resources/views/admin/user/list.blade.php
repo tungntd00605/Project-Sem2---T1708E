@@ -15,7 +15,9 @@
 
     <!-- Your custom styles (optional) -->
     <style>
-
+        th, td {
+            width: 200px;
+        }
     </style>
 </head>
 
@@ -24,17 +26,17 @@
 <div class="card">
     <div class="card-header elegant-color align-middle fixed">
         <div class="white-text float-left"><h1>User table</h1></div>
-        <button type="button" class="btn btn-yellow waves-effect waves-light float-right ml-auto">Upload new</button>
+        <button type="button" class="btn btn-blue waves-effect waves-light float-right ml-auto">Upload new</button>
     </div>
     <div class="card-body">
         <div id="table" class="table">
-            <table class="table table-bordered table-responsive table-striped text-center">
+            <table class="table table-bordered table-striped text-center table-fixed table-sm">
                 <tr>
-                    <th width="30"></th>
-                    <th class="text-center" width="10%">Id</th>
-                    <th class="text-center" width="40%">Email</th>
-                    <th class="text-center" width="40%">Password</th>
-                    <th class="text-center" width="100">Action</th>
+                    <th></th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Password</th>
+                    <th class="text-center">Action</th>
                 </tr>
                 <tr>
                     <td scope="row">
@@ -53,7 +55,7 @@
             </table>
         </div>
     </div>
-    <div class="card-footer white-ic align-middle fixed-bottom">
+    <div class="white-ic align-middle">
         <div class="form-check float-left">
             <input type="checkbox" class="form-check-input" id="materialUnchecked_">
             <label class="form-check-label" for="materialUnchecked_"></label>
