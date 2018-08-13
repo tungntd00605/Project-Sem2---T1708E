@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.register-form');
+        return view('admin.user.add-user-form');
     }
 
     /**
@@ -70,11 +70,11 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $obj = Tag::find($id);
+        $obj = User::find($id);
         if ($obj == null) {
             return view('404');
         }
-        return view('admin.user.edit-user')
+        return view('admin.user.edit-user-form')
             ->with('obj', $obj);
     }
 

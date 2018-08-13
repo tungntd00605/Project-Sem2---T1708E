@@ -30,7 +30,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('admin.tag.create-tag-form');
+        return view('admin.tag.add-tag-form');
     }
 
     /**
@@ -82,7 +82,7 @@ class TagController extends Controller
         if ($obj == null) {
             return view('404');
         }
-        return view('admin.file.edit-tag')
+        return view('admin.file.edit-tag-form')
             ->with('obj', $obj);
     }
 

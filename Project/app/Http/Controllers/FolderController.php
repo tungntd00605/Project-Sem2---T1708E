@@ -28,7 +28,7 @@ class FolderController extends Controller
      */
     public function create()
     {
-        return view('admin.folder.create-folder-form');
+        return view('admin.folder.add-folder-form');
     }
 
     /**
@@ -79,7 +79,7 @@ class FolderController extends Controller
         if ($obj == null) {
             return view('404');
         }
-        return view('admin.folder.edit-folder')
+        return view('admin.folder.edit-folder-form')
             ->with('obj', $obj);
     }
 

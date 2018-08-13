@@ -28,7 +28,7 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('admin.file.file-upload-form');
+        return view('admin.file.add-file-form');
     }
 
     /**
@@ -91,7 +91,7 @@ class FileController extends Controller
         if ($obj == null) {
             return view('404');
         }
-        return view('admin.file.edit-file')
+        return view('admin.file.edit-file-form')
             ->with('obj', $obj);
     }
 

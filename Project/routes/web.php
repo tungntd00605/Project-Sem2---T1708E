@@ -15,4 +15,7 @@ Route::get('/admin', function () {
     return view('layout.admin-master-layout');
 });
 
-Route::resource('/user', 'UserController');
+Route::resource('/admin/user', 'UserController');
+Route::resource('/admin/file', 'FileController');
+Route::resource('/admin/folder', 'FolderController');
+Route::resource('/admin/tag', 'TagController');
