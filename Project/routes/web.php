@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function (){
+    return view('client.home-page');
+});
+
 Route::get('/admin', function () {
     return view('layout.admin-master-layout');
 });
