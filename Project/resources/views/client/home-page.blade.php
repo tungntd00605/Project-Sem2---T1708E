@@ -272,7 +272,7 @@
 
             <div class="row wow fadeIn">
                 <!--Carousel Wrapper-->
-                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+                <div id="multi-item-example1" class="carousel slide carousel-multi-item" data-ride="carousel">
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
 
@@ -416,10 +416,10 @@
                     <!--/.Slides-->
                     <!--Controls-->
                     <div class="controls-top">
-                        <a class="btn-floating" href="#multi-item-example" data-slide="prev">
+                        <a class="btn-floating" href="#multi-item-example1" data-slide="prev">
                             <i class="fa fa-chevron-left"></i>
                         </a>
-                        <a class="btn-floating" href="#multi-item-example" data-slide="next">
+                        <a class="btn-floating" href="#multi-item-example1" data-slide="next">
                             <i class="fa fa-chevron-right"></i>
                         </a>
                     </div>
