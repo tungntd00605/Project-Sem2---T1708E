@@ -15,62 +15,141 @@
 
     <!-- Your custom styles (optional) -->
     <style>
-        th, td {
-            width: 200px;
-        }
+
     </style>
 </head>
 
 <body>
 <!-- Editable table -->
 <div class="card">
-    <div class="card-header elegant-color align-middle fixed">
-        <div class="white-text float-left"><h1>User table</h1></div>
-        <button type="button" class="btn btn-blue waves-effect waves-light float-right ml-auto">Upload new</button>
+    <div class="card-header elegant-color align-middle ">
+        <div class="white-text float-left"><h1>File table</h1></div>
+        <button type="button" class="btn btn-yellow waves-effect waves-light float-right ml-auto">Upload new</button>
     </div>
     <div class="card-body">
-        <div id="table" class="table">
-            <table class="table table-bordered table-striped text-center table-fixed table-sm">
+        <div id="table" class="table table-responsive">
+            <!--Table-->
+            <table id="tablePreview" class="table table-striped table-sm table-bordered text-center">
+                <!--Table head-->
+                <thead>
                 <tr>
-                    <th></th>
-                    <th class="text-center">Id</th>
-                    <th class="text-center">Email</th>
-                    <th class="text-center">Password</th>
-                    <th class="text-center">Action</th>
+                    <th width="5%"></th>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th width="10%" colspan="2">Action</th>
                 </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
                 <tr>
-                    <td scope="row">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialUnchecked1">
-                            <label class="form-check-label" for="materialUnchecked1"></label>
+                    <td>
+                        <div class="form-check float-left">
+                            <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                            <label class="form-check-label" for="materialUnchecked"></label>
                         </div>
                     </td>
-                    <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Tung</td>
-                    <td class="pt-3-half"></td>
+                    <td>01234</td>
+                    <td>Hieu</td>
+                    <td>Online</td>
                     <td>
-                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                        <a class="btn-floating light-green"><i class="fa fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn-floating red"><i class="fa fa-remove"></i></a>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <div class="form-check float-left">
+                            <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                            <label class="form-check-label" for="materialUnchecked"></label>
+                        </div>
+                    </td>
+                    <td>01234</td>
+                    <td>Doan</td>
+                    <td>Offline</td>
+                    <td>
+                        <a class="btn-floating light-green"><i class="fa fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn-floating red"><i class="fa fa-remove"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check float-left">
+                            <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                            <label class="form-check-label" for="materialUnchecked"></label>
+                        </div>
+                    </td>
+                    <td>01234</td>
+                    <td>Tung</td>
+                    <td>Offline</td>
+                    <td>
+                        <a class="btn-floating light-green"><i class="fa fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn-floating red"><i class="fa fa-remove"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-check float-left">
+                            <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                            <label class="form-check-label" for="materialUnchecked"></label>
+                        </div>
+                    </td>
+                    <td>01234</td>
+                    <td>Minh</td>
+                    <td>Online</td>
+                    <td>
+                        <a class="btn-floating light-green"><i class="fa fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn-floating red"><i class="fa fa-remove"></i></a>
+                    </td>
+                </tr>
+                </tbody>
+                <!--Table body-->
             </table>
+            <!--Table-->
         </div>
     </div>
-    <div class="white-ic align-middle">
+
+    <div class="align-middle gray-ic">
         <div class="form-check float-left">
             <input type="checkbox" class="form-check-input" id="materialUnchecked_">
             <label class="form-check-label" for="materialUnchecked_"></label>
         </div>
-        <select class="mdb-select" multiple title="Options">
-            <option value="" disabled selected>Choose your country</option>
-            <option value="1">USA</option>
-            <option value="2">Germany</option>
-            <option value="3">France</option>
-            <option value="4">Poland</option>
-            <option value="5">Japan</option>
-        </select>
+        <label>
+            <select class="mdb-select mr-4 ml-1">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </label>
         <button type="button" class="btn btn-default btn-sm waves-effect waves-light ml-auto">Button</button>
     </div>
 </div>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script src="{{asset('mdb/js/jquery-3.3.1.min.js')}}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{{asset('mdb/js/popper.min.js')}}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{{asset('mdb/js/bootstrap.js')}}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{{asset('mdb/js/mdb.min.js')}}"></script>
+<!--Custom scripts-->
+<script>
+    // Material Select Initialization
+    $(document).ready(function() {
+        $('.mdb-select').material_select();
+    });
+</script>
 <!-- Editable table -->
 </body>
 

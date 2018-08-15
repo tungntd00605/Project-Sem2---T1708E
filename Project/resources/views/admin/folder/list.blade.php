@@ -15,117 +15,96 @@
 
     <!-- Your custom styles (optional) -->
     <style>
-        .table {
-            overflow-x: scroll;
-        }
-        th, td {
-            width: 200px;
-        }
+
     </style>
 </head>
 
 <body>
 <!-- Editable table -->
 <div class="card">
-    <div class="card-header elegant-color align-middle fixed">
-        <div class="white-text float-left"><h1>Folder table</h1></div>
-        <button type="button" class="btn btn-light-green waves-effect waves-light float-right ml-auto">Upload new</button>
+    <div class="card-header elegant-color align-middle ">
+        <div class="white-text float-left"><h1>File table</h1></div>
+        <button type="button" class="btn btn-yellow waves-effect waves-light float-right ml-auto">Upload new</button>
     </div>
     <div class="card-body">
-        <div id="table" class="table">
-            <table class="table table-bordered table-striped text-center table-fixed table-sm">
+        <div id="table" class="table table-responsive">
+            <!--Table-->
+            <table id="tablePreview" class="table table-striped table-sm table-bordered text-center">
+                <!--Table head-->
+                <thead>
                 <tr>
-                    <th></th>
-                    <th class="text-center">Id</th>
-                    <th class="text-center">Name</th>
-                    <th class="text-center">Parent Id</th>
-                    <th class="text-center">User Id</th>
-                    <th class="text-center">Created at</th>
-                    <th class="text-center">Action</th>
+                    <th width="5%"></th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Parent Id</th>
+                    <th>User Id</th>
+                    <th>Created at</th>
+                    <th>Status</th>
+                    <th width="10%" colspan="2">Action</th>
                 </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
                 <tr>
-                    <td scope="row">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialUnchecked1">
-                            <label class="form-check-label" for="materialUnchecked1"></label>
+                    <td>
+                        <div class="form-check float-left">
+                            <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                            <label class="form-check-label" for="materialUnchecked"></label>
                         </div>
                     </td>
-                    <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Folder1</td>
-                    <td class="pt-3-half">1</td>
-                    <td class="pt-3-half">2</td>
-                    <td class="pt-3-half">11/8/2018</td>
+                    <td>12345</td>
+                    <td>Text</td>
+                    <td>16</td>
+                    <td>14</td>
+                    <td>15/8/2018</td>
+                    <td>Available</td>
                     <td>
-                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                        <a class="btn-floating light-green"><i class="fa fa-pencil"></i></a>
+                    </td>
+                    <td>
+                        <a class="btn-floating red"><i class="fa fa-remove"></i></a>
                     </td>
                 </tr>
-                <tr>
-                    <td scope="row">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialUnchecked2">
-                            <label class="form-check-label" for="materialUnchecked2"></label>
-                        </div>
-                    </td>
-                    <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Folder2</td>
-                    <td class="pt-3-half">1</td>
-                    <td class="pt-3-half">2</td>
-                    <td class="pt-3-half">11/8/2018</td>
-                    <td>
-                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialUnchecked3">
-                            <label class="form-check-label" for="materialUnchecked3"></label>
-                        </div>
-                    </td>
-                    <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Folder3</td>
-                    <td class="pt-3-half">1</td>
-                    <td class="pt-3-half">2</td>
-                    <td class="pt-3-half">11/8/2018</td>
-                    <td>
-                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialUnchecked4">
-                            <label class="form-check-label" for="materialUnchecked4"></label>
-                        </div>
-                    </td>
-                    <td class="pt-3-half">01234</td>
-                    <td class="pt-3-half">Folder4</td>
-                    <td class="pt-3-half">1</td>
-                    <td class="pt-3-half">2</td>
-                    <td class="pt-3-half">11/8/2018</td>
-                    <td>
-                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-                    </td>
-                </tr>
+                </tbody>
+                <!--Table body-->
             </table>
+            <!--Table-->
         </div>
     </div>
-    <div class="white-ic align-middle">
+
+    <div class="align-middle gray-ic">
         <div class="form-check float-left">
             <input type="checkbox" class="form-check-input" id="materialUnchecked_">
             <label class="form-check-label" for="materialUnchecked_"></label>
         </div>
-        <select class="mdb-select" multiple title="Options">
-            <option value="" disabled selected>Choose your country</option>
-            <option value="1">USA</option>
-            <option value="2">Germany</option>
-            <option value="3">France</option>
-            <option value="4">Poland</option>
-            <option value="5">Japan</option>
-        </select>
+        <label>
+            <select class="mdb-select mr-4 ml-1">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+            </select>
+        </label>
         <button type="button" class="btn btn-default btn-sm waves-effect waves-light ml-auto">Button</button>
     </div>
 </div>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script src="{{asset('mdb/js/jquery-3.3.1.min.js')}}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{{asset('mdb/js/popper.min.js')}}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{{asset('mdb/js/bootstrap.js')}}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{{asset('mdb/js/mdb.min.js')}}"></script>
+<!--Custom scripts-->
+<script>
+    // Material Select Initialization
+    $(document).ready(function() {
+        $('.mdb-select').material_select();
+    });
+</script>
 <!-- Editable table -->
 </body>
 
