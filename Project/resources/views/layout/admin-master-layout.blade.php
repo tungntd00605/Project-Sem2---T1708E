@@ -1,12 +1,12 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>@yield('page-title')</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -49,11 +49,11 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a href="#" class="collapsible-header waves-effect active"><i class="fa fa-th-large"></i> Home</a></li>
-                    <li><a href="#" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Users Manager</a></li>
-                    <li><a href="#" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Files Manager</a></li>
-                    <li><a href="#" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Folders Manager</a></li>
-                    <li><a href="#" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Tags Manager</a></li>
+                    <li><a href="/admin/user" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Home</a></li>
+                    <li><a href="/admin/user" class="collapsible-header waves-effect {{$currentPage == 'user-list'?'active':''}}"><i class="fa fa-th-large"></i> Users Manager</a></li>
+                    <li><a href="/admin/file" class="collapsible-header waves-effect {{$currentPage == 'file-list'?'active':''}}"><i class="fa fa-th-large"></i> Files Manager</a></li>
+                    <li><a href="/admin/folder" class="collapsible-header waves-effect {{$currentPage == 'folder-list'?'active':''}}"><i class="fa fa-th-large"></i> Folders Manager</a></li>
+                    <li><a href="/admin/tag" class="collapsible-header waves-effect {{$currentPage == 'tag-list'?'active':''}}"><i class="fa fa-th-large"></i> Tags Manager</a></li>
                     <li><a href="#" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Settings Manager</a></li>
                 </ul>
             </li>
@@ -129,14 +129,11 @@
 <!--Main layout-->
 <main>
     <section class="container-fluid">
-
-
-
+        @section('content')
+        @show
     </section>
 </main>
 <!--Main layout-->
-
-
 
 <!-- SCRIPTS -->
 <!-- JQuery -->
@@ -149,8 +146,12 @@
 <script type="text/javascript" src="{{asset('mdb/js/mdb.min.js')}}"></script>
 <!--Custom scripts-->
 <script>
-    // SideNav Initialization
-    $(".button-collapse").sideNav();
+    $(document).ready(function () {
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+        // Material Select Initialization
+        $('.mdb-select').material_select();
+    });
 
     var container = document.querySelector('.custom-scrollbar');
     Ps.initialize(container, {

@@ -1,21 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{asset('mdb/css/bootstrap.min.css')}}">
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="{{asset('mdb/css/mdb.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/add-file.css')}}">
-</head>
-<body>
-<br/>
-<div class="col-lg-4 col-md-6 mb-4 container">
+@extends('layout.admin-master-layout', ['currentPage' => 'file-list'])
+@section('page-title', 'Add file - Admin Page')
+@section('content')
+
+<div class="col-lg-4 col-md-6    mb-4 container">
     <!--Card-->
     <div class="card">
         <!--Card content-->
@@ -66,6 +53,7 @@
         </div>
     </div>
 </div>
+
 <script src="{{asset('mdb/js/jquery-3.3.1.min.js')}}"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="{{asset('mdb/js/popper.min.js')}}"></script>
@@ -73,11 +61,7 @@
 <script type="text/javascript" src="{{asset('mdb/js/bootstrap.js')}}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{{asset('mdb/js/mdb.min.js')}}"></script>
-<script type="text/javascript" !src="">
-    $('input[type="file"]').change(function () {
-        var fileName = $(this).val().replace(/C:\\fakepath\\/i, '');
-        $("#file-name").text(fileName);
-    });
-</script>
-</body>
-</html>
+<!--Custom scripts-->
+<script type="text/javascript" src="{{asset('js/add-file.js')}}"></script>
+
+@endsection
