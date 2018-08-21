@@ -41,26 +41,24 @@ class FileController extends Controller
     {
         if ($request->hasFile('file')){
             $fileName = $request->file->getClientOriginalName();
-            $lengName = substr($fileName,-3);
+            $extension = $request->file->getClientOriginalExtension();
             $fileLink = $request->file->storeAs('public/upload',$fileName);
 
             $obj= new File();
             $obj->name = $fileName;
-            $obj->fileType =$lengName;
-            $obj->tagId = '1' ;
-//           Input::get('tagId');
-            $obj->folderId = '1';
-//                Input::get('folderId');
-            $obj->userId= '1';
-//                Input::get('userId');
-            $obj->link=$fileLink;
+            $obj->fileType =$extension;
+            $obj->tagId = $request->input('tag-id') ;
+            $obj->folderId = $request->input('folder-id');
+            $obj->userId= $request->input('user-id');
+            $obj->link= $request->input('link');
             $obj->path=$fileLink;
             $obj->size= $request->file->getSize();
-            if($obj->save()){
-                return response()->json(['msg' => 'Success to upload file'], 200);
-            }
+            $obj->save();
+            return redirect('/admin/file');
         }
-//        return $request->all();
+        else{
+            return response()->json(['msg' => 'File not found'], 404);
+        }
     }
 
     /**

@@ -1,6 +1,8 @@
 @extends('layout.admin-master-layout', ['currentPage' => 'file-list'])
 @section('page-title', 'Add file - Admin Page')
 @section('content')
+{{--custom css--}}
+<link rel="stylesheet" href="{{asset('css/add-file.css')}}">
 
 <div class="col-lg-4 col-md-6    mb-4 container">
     <!--Card-->
@@ -8,9 +10,9 @@
         <!--Card content-->
         <div class="card-body">
             <!-- Register form -->
-            <form>
+            <form action="/admin/file" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
-                <p class="h5 text-center mb-4">Add File</p>
+                <p class="h5 text-center mb-4">Upload New File</p>
 
                 <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
@@ -26,7 +28,7 @@
 
                 <div class="md-form">
                     <i class="fa fa-folder prefix grey-text"></i>
-                    <input type="text" id="orangeForm-pass" class="form-control" name="user-id">
+                    <input type="text" id="orangeForm-pass" class="form-control" name="folder-id">
                     <label for="orangeForm-pass">Folder</label>
                 </div>
 
@@ -37,16 +39,15 @@
                 </div>
                 <div class="md-form">
                     <span class="btn btn-default btn-file">
-                        Choose file<input type="file" id="input-file">
+                        Choose file<input type="file" id="input-file" name="file">
                     </span>
                     <span class="text-muted" id="file-name"></span>
                 </div>
 
                 <div class="mt-4">
-                    <button class="btn btn-info">Create New File <i class="fa fa-paper-plane-o ml-1"></i></button>
-                    <button class="btn btn-info">Reset</button>
+                    <button type="submit" class="btn btn-info">Create New File <i class="fa fa-paper-plane-o ml-1"></i></button>
+                    <button type="reset" class="btn btn-info">Reset</button>
                 </div>
-
             </form>
             <!-- Register form -->
 
