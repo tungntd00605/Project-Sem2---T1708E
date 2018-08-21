@@ -5,7 +5,7 @@
     <!-- Editable table -->
     <div class="card">
         <div class="card-header elegant-color align-middle ">
-            <div class="white-text float-left"><h1>File table</h1></div>
+            <div class="white-text float-left"><h1>Folder table</h1></div>
             <a href="/admin/folder/create">
                 <button type="button" class="btn btn-yellow waves-effect waves-light float-right ml-auto">Upload new
                 </button>
