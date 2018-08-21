@@ -57,7 +57,7 @@ class FileController extends Controller
             return redirect('/admin/file');
         }
         else{
-            return response()->json(['msg' => 'File not found'], 404);
+            return response()->json(['msg' => 'Upload file not found'], 404);
         }
     }
 
@@ -105,20 +105,27 @@ class FileController extends Controller
         $id = Input::get('id');
         $obj = File::find($id);
         if($obj == null){
-            return response()->json(['msg' => 'Not found'], 404);
+            return response()->json(['msg' => 'File not found'], 404);
         }
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('file')){
             $fileName = $request->file->getClientOriginalName();
-            $lengName = substr($fileName, -3);
-            $fileLink = $request->file->storeAs('public/upload', $fileName);
+            $extension = $request->file->getClientOriginalExtension();
+            $fileLink = $request->file->storeAs('public/upload',$fileName);
 
+            $obj= new File();
             $obj->name = $fileName;
-            $obj->fileType = $lengName;
-            $obj->link = $fileLink;
-            $obj->path = $fileLink;
-            $obj->size = $request->file->getSize();
+            $obj->fileType =$extension;
+            $obj->tagId = $request->input('tag-id') ;
+            $obj->folderId = $request->input('folder-id');
+            $obj->userId= $request->input('user-id');
+            $obj->link= $request->input('link');
+            $obj->path=$fileLink;
+            $obj->size= $request->file->getSize();
             $obj->save();
-            return response()->json(['msg' => 'Success to update file'], 200);
+            return redirect('/admin/file');
+        }
+        else{
+            return response()->json(['msg' => 'Upload file not found'], 404);
         }
     }
 
