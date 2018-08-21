@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('page-title')</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('mdb/css/bootstrap.min.css')}}">
     <!-- Material Design Bootstrap -->
@@ -49,12 +49,12 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a href="/admin/user" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Home</a></li>
-                    <li><a href="/admin/user" class="collapsible-header waves-effect {{$currentPage == 'user-list'?'active':''}}"><i class="fa fa-th-large"></i> Users Manager</a></li>
-                    <li><a href="/admin/file" class="collapsible-header waves-effect {{$currentPage == 'file-list'?'active':''}}"><i class="fa fa-th-large"></i> Files Manager</a></li>
-                    <li><a href="/admin/folder" class="collapsible-header waves-effect {{$currentPage == 'folder-list'?'active':''}}"><i class="fa fa-th-large"></i> Folders Manager</a></li>
-                    <li><a href="/admin/tag" class="collapsible-header waves-effect {{$currentPage == 'tag-list'?'active':''}}"><i class="fa fa-th-large"></i> Tags Manager</a></li>
-                    <li><a href="#" class="collapsible-header waves-effect"><i class="fa fa-th-large"></i> Settings Manager</a></li>
+                    <li><a href="/admin/user" class="collapsible-header waves-effect"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="/admin/user" class="collapsible-header waves-effect {{$currentPage == 'user-list'?'active':''}}"><i class="fas fa-user"></i> Users Manager</a></li>
+                    <li><a href="/admin/file" class="collapsible-header waves-effect {{$currentPage == 'file-list'?'active':''}}"><i class="fas fa-file"></i> Files Manager</a></li>
+                    <li><a href="/admin/folder" class="collapsible-header waves-effect {{$currentPage == 'folder-list'?'active':''}}"><i class="fas fa-folder"></i> Folders Manager</a></li>
+                    <li><a href="/admin/tag" class="collapsible-header waves-effect {{$currentPage == 'tag-list'?'active':''}}"><i class="fas fa-tags"></i> Tags Manager</a></li>
+                    <li><a href="#" class="collapsible-header waves-effect"><i class="fas fa-cogs"></i> Settings Manager</a></li>
                 </ul>
             </li>
             <!--/. Side navigation links -->
