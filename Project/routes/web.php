@@ -25,6 +25,10 @@ Route::get('/admin', function () {
     return view('layout.admin-master-layout');
 });
 
+Route::get('/detail', function (){
+    return view('client.detail');
+});
+
 Route::resource('/admin/user', 'UserController');
 Route::resource('/admin/file', 'FileController');
 Route::resource('/admin/folder', 'FolderController');
