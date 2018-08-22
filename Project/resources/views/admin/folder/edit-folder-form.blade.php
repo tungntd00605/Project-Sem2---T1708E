@@ -20,7 +20,7 @@
         <!--Card content-->
         <div class="card-body">
             <!-- Register form -->
-            <form action="/admin/tag/" method="post">
+            <form action="/admin/folder/{{$obj->id}}" method="post">
                 @method('PUT')
                 {{csrf_field()}}
                 <p class="h5 text-center mb-4">Edit Folder</p>
@@ -28,25 +28,25 @@
                 {{--@foreach()--}}
                 <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="orangeForm-pass" class="form-control" name="user-id" value="">
+                    <input type="text" id="orangeForm-pass" class="form-control disabled text-light" name="user-id" value="{{$obj->userId}}">
                     <label for="orangeForm-pass">User</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-folder prefix grey-text"></i>
-                    <input type="text" id="orangeForm-pass" class="form-control" name="name" value="">
-                    <label for="orangeForm-pass">Name Folder</label>
+                    <input type="text" id="orangeForm-pass" class="form-control" name="name" value="{{$obj->name}}">
+                    <label for="orangeForm-pass">Folder Name</label>
                 </div>
 
                 <div class="md-form">
-                    <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="text" id="orangeForm-email" class="form-control" name="parent-id" value="">
-                    <label for="orangeForm-email">Perant</label>
+                    <i class="fa fa-folder prefix grey-text"></i>
+                    <input type="text" id="orangeForm-email" class="form-control disabled text-light" name="parent-id" value="{{$obj->parentId}}">
+                    <label for="orangeForm-email">Parent Folder</label>
                 </div>
 
                 {{--@endforeach--}}
                 <div class="mt-4">
-                    <button class="btn btn-primary">Create New Folder <i class="fa fa-paper-plane-o ml-1"></i></button>
+                    <button class="btn btn-primary">Update Folder Name <i class="fa fa-paper-plane-o ml-1"></i></button>
                     <button class="btn btn-primary">Reset</button>
                 </div>
 

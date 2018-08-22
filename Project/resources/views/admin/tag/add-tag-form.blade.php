@@ -8,7 +8,7 @@
         <!--Card content-->
         <div class="card-body">
             <!-- Register form -->
-            <form action="/admin/tag/store" method="post">
+            <form action="/admin/tag" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <p class="h5 text-center mb-4">Add Tag</p>
 

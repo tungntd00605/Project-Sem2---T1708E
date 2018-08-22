@@ -41,11 +41,11 @@ class FolderController extends Controller
     {
         $obj = new Folder();
         $obj->name = Input::get('name');
-        $obj->parentId = Input::get('parentId');
-        $obj->userId = Input::get('userId');
-        $obj->save();
+        $obj->parentId = Input::get('parent-id');
+        $obj->userId = Input::get('user-id');
         if($obj->save()){
-            return response()->json(['msg' => 'Success to create new folder'], 200);
+            response()->json(['msg' => 'Success to create new folder'], 200);
+            return redirect('admin/folder');
         }
     }
 
@@ -75,7 +75,7 @@ class FolderController extends Controller
     public function edit($id)
     {
         //
-        $obj = Tag::find($id);
+        $obj = Folder::find($id);
         if ($obj == null) {
             return view('404');
         }
@@ -90,10 +90,10 @@ class FolderController extends Controller
             return view('404');
         }
         $obj->name = Input::get('name');
-        $obj->parentId = Input::get('parentId');
-        $obj->userId = Input::get('userId');
-        $obj->save();
-        return response()->json(['msg'=>'Success to update password'], 200);
+        if($obj->save()) {
+            response()->json(['msg' => 'Success to update password'], 200);
+            return redirect('/admin/folder');
+        }
     }
 
     /**

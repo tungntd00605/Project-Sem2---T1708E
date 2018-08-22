@@ -44,13 +44,14 @@ class TagController extends Controller
         $obj = new Tag();
         $obj->name = Input::get('name');
         $obj->description = Input::get('description');
-        if (Input::hasFile('images')) {
+        if (Input::hasFile('image')) {
             $image_id = time();
-            Cloudder::upload(Input::file('images')->getRealPath(), $image_id);
+            Cloudder::upload(Input::file('image')->getRealPath(), $image_id);
             $obj->image = Cloudder::secureShow($image_id);
         }
         if($obj->save()){
-            return response()->json(['msg' => 'Success to create new tag'], 200);
+            response()->json(['msg' => 'Success to create new tag'], 200);
+            return redirect('admin/tag');
         }
     }
 
@@ -101,13 +102,16 @@ class TagController extends Controller
         }
         $obj->name = Input::get('name');
         $obj->description = Input::get('description');
-        if (Input::hasFile('images')) {
+        if (Input::hasFile('image')) {
             $image_id = time();
-            Cloudder::upload(Input::file('images')->getRealPath(), $image_id);
+            Cloudder::upload(Input::file('image')->getRealPath(), $image_id);
             $obj->images = Cloudder::secureShow($image_id);
         }
         $obj->save();
-        return response()->json(['msg'=>'Success to update tag'], 200);
+        if($obj->save()){
+            response()->json(['msg' => 'Success to update tag'], 200);
+            return redirect('admin/tag');
+        }
     }
 
     /**

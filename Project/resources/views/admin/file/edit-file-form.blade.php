@@ -20,14 +20,14 @@
         <!--Card content-->
         <div class="card-body">
             <!-- Register form -->
-            <form action="#" method="post">
+            <form action="admin/file/{{$obj->id}}" method="post">
                 @method('PUT')
                 {{csrf_field()}}
                 <p class="h5 text-center mb-4" style="color: #0b51c5">Edit File</p>
 
                 <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" class="form-control" name="file-upload-name">
+                    <input type="text" class="form-control disabled text-light" value="{{$obj->userId}}" name="file-upload-name">
                     <label for="orangeForm-pass">User</label>
                 </div>
 
@@ -39,13 +39,13 @@
 
                 <div class="md-form">
                     <i class="fa fa-file prefix grey-text"></i>
-                    <input type="text" class="form-control" name="file-type" disabled>
+                    <input type="text" class="form-control disabled text-light" value="{{$obj->fileType}}" name="file-type" disabled>
                     <label for="orangeForm-email">Type File</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-file prefix grey-text"></i>
-                    <input type="text" class="form-control" name="size" disabled>
+                    <input type="text" class="form-control disabled text-light" value="{{$obj->size}}" name="size" disabled>
                     <label> Size File</label>
                 </div>
 
@@ -69,7 +69,7 @@
 
                 <div class="md-form">
                     <i class="fa fa-link prefix grey-text"></i>
-                    <input type="text" class="form-control" name="path" disabled>
+                    <input type="text" class="form-control disabled text-light" value="{{$obj->path}}" name="path" disabled>
                     <label for="orangeForm-pass">Path</label>
                 </div>
 

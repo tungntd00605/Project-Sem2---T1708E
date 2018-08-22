@@ -8,7 +8,7 @@
         <!--Card content-->
         <div class="card-body">
             <!-- Register form -->
-            <form action="/admin/tag/store" method="post">
+            <form action="/admin/folder" method="post">
                 {{csrf_field()}}
                 <p class="h5 text-center mb-4">Add Folder</p>
 
@@ -21,13 +21,13 @@
                 <div class="md-form">
                     <i class="fa fa-folder prefix grey-text"></i>
                     <input type="text" id="orangeForm-pass" class="form-control" name="name">
-                    <label for="orangeForm-pass">Name Folder</label>
+                    <label for="orangeForm-pass">Folder Name</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-folder prefix grey-text"></i>
                     <input type="text" id="orangeForm-email" class="form-control" name="parent-id">
-                    <label for="orangeForm-email">Perant</label>
+                    <label for="orangeForm-email">Parent Folder</label>
                 </div>
 
                 <div class="mt-4">

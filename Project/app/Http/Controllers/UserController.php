@@ -42,7 +42,8 @@ class UserController extends Controller
         $obj->email = Input::get('email');
         $obj->password = Input::get('password');
         if($obj->save()){
-            return response()->json(['msg' => 'Register Success'], 200);
+            response()->json(['msg' => 'Register Success'], 200);
+            return redirect('/admin/user');
         }
     }
 
@@ -93,7 +94,8 @@ class UserController extends Controller
         }
         $obj->password = Input::get('password');
         if ($obj->save()){
-            return response()->json(['msg'=>'Success to update password'], 200);
+            response()->json(['msg'=>'Success to update password'], 200);
+            return redirect('/admin/user');
         }
     }
 
