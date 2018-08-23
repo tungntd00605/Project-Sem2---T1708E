@@ -20,6 +20,9 @@ Route::get('/category', function (){
     return view('client.category');
 });
 
+Route::get('/preview', function (){
+    return view('client.preview-pdf');
+});
 
 Route::get('/admin', function () {
     return view('layout.admin-master-layout');
