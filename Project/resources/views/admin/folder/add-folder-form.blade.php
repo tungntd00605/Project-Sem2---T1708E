@@ -31,8 +31,8 @@
                 </div>
 
                 <div class="mt-4">
-                    <button class="btn btn-primary">Create New Folder <i class="fa fa-paper-plane-o ml-1"></i></button>
-                    <button class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Create New Folder <i class="fa fa-paper-plane-o ml-1"></i></button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
 
             </form>

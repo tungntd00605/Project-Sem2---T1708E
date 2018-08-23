@@ -38,20 +38,16 @@
                 </div>
 
                 <div class="md-form">
-                    <div class="file-field">
-                        <div class="btn btn-default btn-sm float-left">
-                            <span>Choose file</span>
-                            <input type="file" name="image">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Upload your image">
-                        </div>
-                    </div>
+                    <span class="btn btn-default btn-file">
+                        Choose file<input type="file" id="input-file" name="file">
+                    </span>
+                    <span class="text-muted" id="file-name"></span>
                 </div>
+
                 {{--@endforeach--}}
                 <div class="text-center mt-4">
-                    <button class="btn btn-primary">Edit Tag <i class="fa fa-paper-plane-o ml-1"></i></button>
-                    <button class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Edit Tag <i class="fa fa-paper-plane-o ml-1"></i></button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
 
             </form>
@@ -67,5 +63,6 @@
 <script type="text/javascript" src="{{asset('mdb/js/bootstrap.js')}}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{{asset('mdb/js/mdb.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/edit-tag.js')}}"></script>
 </body>
 </html>

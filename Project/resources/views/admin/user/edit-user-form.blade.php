@@ -54,8 +54,8 @@
                                         </div>
 
                                         <div class="text-center">
-                                            <button class="btn purple-gradient btn-lg">Edit User</button>
-                                            <button class="btn purple-gradient btn-lg">Reset</button>
+                                            <button type="submit" class="btn purple-gradient btn-lg">Edit User</button>
+                                            <button type="reset" class="btn purple-gradient btn-lg">Reset</button>
                                         </div>
                                     {{--@endforeach--}}
                                 </div>

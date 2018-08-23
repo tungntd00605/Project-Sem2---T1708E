@@ -7,7 +7,7 @@
         <div class="card-header elegant-color align-middle ">
             <div class="white-text float-left"><h1>User table</h1></div>
             <a href="/admin/user/create">
-                <button type="button" class="btn btn-yellow waves-effect waves-light float-right ml-auto">Upload new
+                <button type="button" class="btn btn-yellow waves-effect waves-light float-right ml-auto">Create new
                 </button>
             </a>
         </div>

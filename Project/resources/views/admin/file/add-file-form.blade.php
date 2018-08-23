@@ -22,6 +22,7 @@
 
                 <div class="md-form">
                     <i class="fa fa-envelope prefix grey-text"></i>
+
                     <input type="text" id="orangeForm-email" class="form-control" name="tag-id">
                     <label for="orangeForm-email">Tag</label>
                 </div>
@@ -65,4 +66,7 @@
 <!--Custom scripts-->
 <script type="text/javascript" src="{{asset('js/add-file.js')}}"></script>
 
+<script>
+
+</script>
 @endsection

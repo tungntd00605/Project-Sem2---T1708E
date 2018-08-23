@@ -1,7 +1,7 @@
 @extends('layout.admin-master-layout', ['currentPage' => 'tag-list'])
 @section('page-title', 'Add Tag - Admin Page')
 @section('content')
-
+<link rel="stylesheet" href="{{asset('css/add-tag.css')}}">
 <div class="col-lg-4 col-md-6 mb-4 container">
     <!--Card-->
     <div class="card">
@@ -14,7 +14,7 @@
 
                 <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="orangeForm-pass" class="form-control" name="user-id">
+                    <input type="text" id="orangeForm-pass" class="form-control" name="name">
                     <label for="orangeForm-pass">Name Tag</label>
                 </div>
 
@@ -25,20 +25,20 @@
                 </div>
 
                 <div class="md-form">
-                    <div class="file-field">
-                        <div class="btn btn-default btn-sm float-left">
-                            <span>Choose file</span>
-                            <input type="file" name="image">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Upload your image" >
-                        </div>
-                    </div>
+                    <span class="btn btn-default btn-file">
+                        Choose file<input type="file" id="input-file" name="file">
+                    </span>
+                    <span class="text-muted" id="file-name"></span>
+                </div>
+
+                <div class="card" hidden="true"
+                     id="preview-img"
+                     style="background-size: cover; width: 140px; height: 80px;">
                 </div>
 
                 <div class="text-center mt-4">
-                    <button class="btn btn-primary">Create New Tag <i class="fa fa-paper-plane-o ml-1"></i></button>
-                    <button class="btn btn-primary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Create New Tag <i class="fa fa-paper-plane-o ml-1"></i></button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
                 </div>
 
             </form>
@@ -54,5 +54,5 @@
 <script type="text/javascript" src="{{asset('mdb/js/bootstrap.js')}}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{{asset('mdb/js/mdb.min.js')}}"></script>
-
+<script type="text/javascript" src="{{asset('js/add-tag.js')}}"></script>
 @endsection

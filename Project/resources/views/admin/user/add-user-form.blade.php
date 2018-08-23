@@ -19,7 +19,7 @@
                             <div class="md-form">
                                 <i class="fa fa-envelope prefix white-text"></i>
                                 <input type="text" id="orangeForm-email" class="form-control" name="email">
-                                <label for="orangeForm-email">{{$obj->email}}</label>
+                                <label for="orangeForm-email">Email</label>
                             </div>
 
                             <div class="md-form">
@@ -35,14 +35,9 @@
                             </div>
 
                             <div class="text-center">
-                                <button class="btn purple-gradient btn-lg">Create New User</button>
-                                <button class="btn purple-gradient btn-lg">Reset</button>
+                                <button type="submit" class="btn purple-gradient btn-lg">Create New User</button>
+                                <button type="reset" class="btn purple-gradient btn-lg">Reset</button>
                                 <hr>
-                                <div class="inline-ul text-center d-flex justify-content-center">
-                                    <a class="p-2 m-2 fa-lg tw-ic"><i class="fa fa-twitter white-text"></i></a>
-                                    <a class="p-2 m-2 fa-lg li-ic"><i class="fa fa-linkedin white-text"> </i></a>
-                                    <a class="p-2 m-2 fa-lg ins-ic"><i class="fa fa-instagram white-text"> </i></a>
-                                </div>
                             </div>
 
                         </div>
