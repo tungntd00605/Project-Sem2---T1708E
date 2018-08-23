@@ -14,7 +14,7 @@
 
                 <div class="md-form">
                     <i class="fa fa-user prefix grey-text"></i>
-                    <input type="text" id="orangeForm-pass" class="form-control" name="user-id">
+                    <input type="text" id="orangeForm-pass" class="form-control" name="name">
                     <label for="orangeForm-pass">Name Tag</label>
                 </div>
 
